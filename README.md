@@ -1,7 +1,7 @@
 Simple Pow BlockChain 
 ======================
 
-# The structure and function of simple blockchain based on pow method.
+The structure and function of simple blockchain based on pow method.
 
 ## Development Environment
 

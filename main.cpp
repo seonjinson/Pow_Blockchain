@@ -11,16 +11,20 @@ int main() {
 
     vector<Block> Blockchain;
     Blockchain.push_back({"","This is first block",Blockchain.size()});
-    cout<<"Hash for block 1: "<<Blockchain[Blockchain.size()-1].hash <<endl;
+    Blockchain[Blockchain.size()-1].miningBlock(3);
 
     Blockchain.push_back({Blockchain[Blockchain.size()-1].hash,"This is second block",Blockchain.size()});
-    cout<<"Hash for block 2: "<<Blockchain[Blockchain.size()-1].hash <<endl;
+    Blockchain[Blockchain.size()-1].miningBlock(3);
+
+    Blockchain.push_back({Blockchain[Blockchain.size()-1].hash,"This is Third block",Blockchain.size()});
+    Blockchain[Blockchain.size()-1].miningBlock(3);
 
     for(std::vector<Block>::iterator it = Blockchain.begin(); it != Blockchain.end(); it++) {
 
     root["prevHash"] = it->prevHash;
     root["message"] = it->msg;
     root["height"] = it->height;
+    root["Hash"] = it->hash;
 
     chain["blockchain"].append(root);
     }

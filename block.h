@@ -1,15 +1,13 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <ctime>
-#include "sha256.h"
 
 using namespace std;
 
 class Block {
 private:
-    int nonce;
-    time_t time;
+    int nonce =0;
+    time_t timestamp;
 
 public:
     string hash;
@@ -18,8 +16,10 @@ public:
     unsigned int height;
 
     string createHash();
+    void miningBlock(int difficult);
+    
     time_t getTime(){
-        return this->time;
+        return this->timestamp;
     }
     Block(){
     }
@@ -27,17 +27,7 @@ public:
         this->prevHash = _prevHash;
         this->msg = _msg;
         this->height = _height;
-        this->time = std::time(nullptr);
+        this->timestamp = std::time(nullptr);
         this->hash = createHash();
     }
 };
-
-string Block::createHash(){
-    string headHash = sha256(
-        prevHash+
-        std::to_string(time)+
-        msg
-    );
-    cout<<"time : "<<getTime()<<endl;
-    return headHash;
-}

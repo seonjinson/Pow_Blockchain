@@ -16,7 +16,7 @@ That may make an error if the gcc version is different.
 
 * compile & build
 ```
-
+$ git clone https://github.com/seonjinson/Pow_Blockchain.git
 $ cd Pow_Blockchain
 $ make
 $ ./a_out

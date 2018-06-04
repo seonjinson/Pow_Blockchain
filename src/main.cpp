@@ -14,10 +14,10 @@ int main() {
     Blockchain[Blockchain.size()-1].miningBlock(3);
 
     Blockchain.push_back({Blockchain[Blockchain.size()-1].hash,"This is second block",Blockchain.size()});
-    Blockchain[Blockchain.size()-1].miningBlock(3);
+    Blockchain[Blockchain.size()-1].miningBlock(4);
 
     Blockchain.push_back({Blockchain[Blockchain.size()-1].hash,"This is Third block",Blockchain.size()});
-    Blockchain[Blockchain.size()-1].miningBlock(3);
+    Blockchain[Blockchain.size()-1].miningBlock(5);
 
     for(std::vector<Block>::iterator it = Blockchain.begin(); it != Blockchain.end(); it++) {
 

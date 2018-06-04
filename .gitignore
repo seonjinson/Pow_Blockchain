@@ -1,0 +1,8 @@
+.vscode
+.gitattributes
+src/a_out
+a_out
+block.o 
+jsoncpp.o 
+main.o 
+sha256.o
